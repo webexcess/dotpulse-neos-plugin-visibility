@@ -2,7 +2,11 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="" product-name="Dotpulse.Visibility" source-language="en" datatype="plaintext" target-language="de">
 		<body>
-			<trans-unit id="groups.responsive" xml:space="preserve">
+			<trans-unit id="tabs.responsive" xml:space="preserve">
+				<source>Responsive Settings</source>
+				<target xml:lang="de">Responsive Einstellungen</target>
+			</trans-unit>
+			<trans-unit id="groups.showOn" xml:space="preserve">
 				<source>Show content on…</source>
 				<target xml:lang="de">Zeige Inhalt auf…</target>
 			</trans-unit>
