@@ -1,0 +1,13 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Dotpulse.Visibility': TRUE
+    userInterface:
+      translation:
+        autoInclude:
+          'Dotpulse.Visibility': ['NodeTypes/*']
+
+Dotpulse:
+  Visibility:
+    includeCSS: FALSE

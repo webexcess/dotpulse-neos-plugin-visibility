@@ -1,0 +1,12 @@
+@import 'Variables';
+@import 'Mixin';
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	.hidden-#{$breakpoint} {
+		@include media-invisibility($breakpoint);
+	}
+}
+
+.hidden-print {
+	@include media-invisibility('print');
+}

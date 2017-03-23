@@ -1,0 +1,26 @@
+prototype(TYPO3.Neos:Page) {
+	head {
+		stylesheets.visibility  = TYPO3.TypoScript:Tag {
+			@if.liveAnfIncludeCSS = ${!node.context.inBackend && Configuration.setting('Dotpulse.Visibility.includeCSS')}
+			@position = 'end'
+			tagName = 'link'
+			attributes {
+				rel = 'stylesheet'
+				href = TYPO3.TypoScript:ResourceUri {
+					path = 'resource://Dotpulse.Visibility/Public/Visibility.css'
+				}
+			}
+		}
+	}
+}
+
+prototype(TYPO3.Neos:Content) {
+	attributes.class = TYPO3.TypoScript:RawArray {
+		hideOnXS    = ${q(node).property('showOnXS') || node.context.inBackend ? false : 'hidden-xs'}
+		hideOnSM    = ${q(node).property('showOnSM') || node.context.inBackend ? false : 'hidden-sm'}
+		hideOnMD    = ${q(node).property('showOnMD') || node.context.inBackend ? false : 'hidden-md'}
+		hideOnLG    = ${q(node).property('showOnLG') || node.context.inBackend ? false : 'hidden-lg'}
+		hideOnXL    = ${q(node).property('showOnXL') || node.context.inBackend ? false : 'hidden-xl'}
+		hideOnPrint = ${q(node).property('showOnPrint') || node.context.inBackend ? false : 'hidden-print'}
+	}
+}

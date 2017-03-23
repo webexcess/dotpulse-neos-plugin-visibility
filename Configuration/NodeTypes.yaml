@@ -1,0 +1,76 @@
+'Dotpulse.Visibility:Mixin':
+  abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        responsive:
+          label: i18n
+          position: 200
+          tab: meta
+        type:
+          position: 500$
+  properties:
+    showOnXS:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        reloadPageIfChanged: FALSE
+        inspector:
+          position: 10
+          group: responsive
+    showOnSM:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        reloadPageIfChanged: FALSE
+        inspector:
+          position: 20
+          group: responsive
+    showOnMD:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        reloadPageIfChanged: FALSE
+        inspector:
+          position: 30
+          group: responsive
+    showOnLG:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        reloadPageIfChanged: FALSE
+        inspector:
+          position: 40
+          group: responsive
+    showOnXL:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        reloadPageIfChanged: FALSE
+        inspector:
+          position: 50
+          group: responsive
+    showOnPrint:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        reloadPageIfChanged: FALSE
+        inspector:
+          position: 60
+          group: responsive
+
+
+'TYPO3.Neos:Content':
+  superTypes:
+    'Dotpulse.Visibility:Mixin': TRUE
+
+
+'TYPO3.Neos.NodeTypes:Records':
+  superTypes:
+    'Dotpulse.Visibility:Mixin': FALSE

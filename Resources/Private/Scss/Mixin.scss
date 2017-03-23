@@ -1,0 +1,56 @@
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+	$n: index($breakpoint-names, $name);
+	@return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+	$min: map-get($breakpoints, $name);
+	@return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+	$next: breakpoint-next($name, $breakpoints);
+	@return if($next, breakpoint-min($next, $breakpoints) - 1px, null);
+}
+
+@mixin media-breakpoint-between($minimal, $maximal, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($minimal, $breakpoints);
+	$max: breakpoint-max($maximal, $breakpoints);
+	@if $min {
+		@if $max {
+			@media (min-width: $min) and (max-width: $max) {
+				@content;
+			}
+		} @else {
+			@media (min-width: $min) {
+				@content;
+			}
+		}
+	} @else {
+		@if $max {
+			@media (max-width: $max) {
+				@content;
+			}
+		} @else {
+			@content;
+		}
+	}
+}
+
+@mixin media-breakpoint-single($name, $breakpoints: $grid-breakpoints) {
+	@include media-breakpoint-between($name, $name, $breakpoints: $grid-breakpoints) {
+		@content;
+	}
+}
+
+@mixin media-invisibility($name, $breakpoints: $grid-breakpoints) {
+	@if map-has-key($breakpoints, $name) {
+		@include media-breakpoint-single($name) {
+			display: none !important; // scss-lint:disable ImportantRule
+		}
+	} @else {
+		@media #{$name} {
+			display: none !important; // scss-lint:disable ImportantRule
+		}
+	}
+}

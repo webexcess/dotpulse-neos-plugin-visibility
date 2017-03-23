@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Dotpulse.Visibility" source-language="en" datatype="plaintext" target-language="de">
+		<body>
+			<trans-unit id="groups.responsive" xml:space="preserve">
+				<source>Show content on…</source>
+				<target xml:lang="de">Zeige Inhalt auf…</target>
+			</trans-unit>
+			<trans-unit id="properties.showOnXS" xml:space="preserve">
+				<source>Tiny screens (Phones)</source>
+				<target xml:lang="de">Winzigen Bildschirmen (Smartphones)</target>
+			</trans-unit>
+			<trans-unit id="properties.showOnSM" xml:space="preserve">
+				<source>Small screens (Tablets)</source>
+				<target xml:lang="de">Kleinen Bildschirmen (Tablets)</target>
+			</trans-unit>
+			<trans-unit id="properties.showOnMD" xml:space="preserve">
+				<source>Medium screens (Laptops)</source>
+				<target xml:lang="de">Mittleren Bildschirmen (Laptops)</target>
+			</trans-unit>
+			<trans-unit id="properties.showOnLG" xml:space="preserve">
+				<source>Large screens (Desktops)</source>
+				<target xml:lang="de">Großen Bildschirmen (Desktops)</target>
+			</trans-unit>
+			<trans-unit id="properties.showOnXL" xml:space="preserve">
+				<source>Huge screens (Workstations)</source>
+				<target xml:lang="de">Riesigen Bildschirmen (Workstations)</target>
+			</trans-unit>
+			<trans-unit id="properties.showOnPrint" xml:space="preserve">
+				<source>Print content</source>
+				<target xml:lang="de">Drucke Inhalt</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
