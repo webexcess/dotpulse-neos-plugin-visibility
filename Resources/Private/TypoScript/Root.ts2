@@ -28,12 +28,12 @@ prototype(Visibility:ContentRawArray) < prototype(TypoScript:RawArray) {
 }
 
 prototype(Visibility:MenuRawArray) < prototype(Visibility:ContentRawArray) {
-	@override.node = ${item.node}
+	@context.node = ${item.node}
 	hideOnPrint = false
 }
 
 prototype(Neos:Content) {
-	@override.visibility = Visibility:ContentRawArray
+	@context.visibility = Visibility:ContentRawArray
 
 	attributes.class = TypoScript:RawArray {
 		visibility = ${Array.join(visibility, ' ')}
