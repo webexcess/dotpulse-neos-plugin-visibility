@@ -16,11 +16,11 @@ prototype(TYPO3.Neos:Page) {
 
 prototype(TYPO3.Neos:Content) {
 	attributes.class = TYPO3.TypoScript:RawArray {
-		hideOnXS    = ${q(node).property('showOnXS') || node.context.inBackend ? false : 'hidden-xs'}
-		hideOnSM    = ${q(node).property('showOnSM') || node.context.inBackend ? false : 'hidden-sm'}
-		hideOnMD    = ${q(node).property('showOnMD') || node.context.inBackend ? false : 'hidden-md'}
-		hideOnLG    = ${q(node).property('showOnLG') || node.context.inBackend ? false : 'hidden-lg'}
-		hideOnXL    = ${q(node).property('showOnXL') || node.context.inBackend ? false : 'hidden-xl'}
-		hideOnPrint = ${q(node).property('showOnPrint') || node.context.inBackend ? false : 'hidden-print'}
+		hideOnXS = ${q(node).property('showOnXS') == false && !node.context.inBackend ? 'hidden-xs' : false}
+		hideOnSM = ${q(node).property('showOnSM') == false && !node.context.inBackend ? 'hidden-sm' : false}
+		hideOnMD = ${q(node).property('showOnMD') == false && !node.context.inBackend ? 'hidden-md' : false}
+		hideOnLG = ${q(node).property('showOnLG') == false && !node.context.inBackend ? 'hidden-lg' : false}
+		hideOnXL = ${q(node).property('showOnXL') == false && !node.context.inBackend ? 'hidden-xl' : false}
+		hideOnPrint = ${q(node).property('showOnPrint') == false && !node.context.inBackend ? 'hidden-print' : false}
 	}
 }
