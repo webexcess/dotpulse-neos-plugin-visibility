@@ -18,7 +18,7 @@ prototype(Neos:Page) {
 	}
 }
 
-prototype(Visibility:ContentArray) < prototype(TypoScript:RawArray) {
+prototype(Visibility:ContentRawArray) < prototype(TypoScript:RawArray) {
 	hideOnXS = ${q(node).property('showOnXS') == false && !node.context.inBackend ? 'hidden-xs' : false}
 	hideOnSM = ${q(node).property('showOnSM') == false && !node.context.inBackend ? 'hidden-sm' : false}
 	hideOnMD = ${q(node).property('showOnMD') == false && !node.context.inBackend ? 'hidden-md' : false}
@@ -27,27 +27,31 @@ prototype(Visibility:ContentArray) < prototype(TypoScript:RawArray) {
 	hideOnPrint = ${q(node).property('showOnPrint') == false && !node.context.inBackend ? 'hidden-print' : false}
 }
 
-prototype(Visibility:MenuArray) < prototype(Visibility:ContentArray) {
+prototype(Visibility:MenuRawArray) < prototype(Visibility:ContentRawArray) {
 	@override.node = ${item.node}
 	hideOnPrint = false
 }
 
 prototype(Neos:Content) {
-	attributes.class = Visibility:ContentArray
+	@override.visibility = Visibility:ContentRawArray
+
+	attributes.class = TypoScript:RawArray {
+		visibility = ${Array.join(visibility, ' ')}
+	}
 }
 
 /* Include Menu Classes like this:
 
 prototype(Neos:Menu) {
-	active.attributes.class = Dotpulse.Visibility:MenuArray {
+	active.attributes.class = Dotpulse.Visibility:MenuRawArray {
 		active = 'active'
 	}
 
-	current.attributes.class = Dotpulse.Visibility:MenuArray {
+	current.attributes.class = Dotpulse.Visibility:MenuRawArray {
 		current = 'active'
 	}
 
-	normal.attributes.class = Dotpulse.Visibility:MenuArray
+	normal.attributes.class = Dotpulse.Visibility:MenuRawArray
 }
 
 */
