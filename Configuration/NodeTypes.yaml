@@ -7,8 +7,6 @@
           label: i18n
           position: 200
           tab: meta
-        type:
-          position: 500$
   properties:
     showOnXS:
       type: boolean

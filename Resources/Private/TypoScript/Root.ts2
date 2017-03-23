@@ -1,6 +1,10 @@
-prototype(TYPO3.Neos:Page) {
+namespace: TypoScript=TYPO3.TypoScript
+namespace: Neos=TYPO3.Neos
+namespace: Visibility=Dotpulse.Visibility
+
+prototype(Neos:Page) {
 	head {
-		stylesheets.visibility  = TYPO3.TypoScript:Tag {
+		stylesheets.visibility  = TypoScript:Tag {
 			@if.liveAnfIncludeCSS = ${!node.context.inBackend && Configuration.setting('Dotpulse.Visibility.includeCSS')}
 			@position = 'end'
 			tagName = 'link'
@@ -14,13 +18,36 @@ prototype(TYPO3.Neos:Page) {
 	}
 }
 
-prototype(TYPO3.Neos:Content) {
-	attributes.class = TYPO3.TypoScript:RawArray {
-		hideOnXS = ${q(node).property('showOnXS') == false && !node.context.inBackend ? 'hidden-xs' : false}
-		hideOnSM = ${q(node).property('showOnSM') == false && !node.context.inBackend ? 'hidden-sm' : false}
-		hideOnMD = ${q(node).property('showOnMD') == false && !node.context.inBackend ? 'hidden-md' : false}
-		hideOnLG = ${q(node).property('showOnLG') == false && !node.context.inBackend ? 'hidden-lg' : false}
-		hideOnXL = ${q(node).property('showOnXL') == false && !node.context.inBackend ? 'hidden-xl' : false}
-		hideOnPrint = ${q(node).property('showOnPrint') == false && !node.context.inBackend ? 'hidden-print' : false}
-	}
+prototype(Visibility:ContentArray) < prototype(TypoScript:RawArray) {
+	hideOnXS = ${q(node).property('showOnXS') == false && !node.context.inBackend ? 'hidden-xs' : false}
+	hideOnSM = ${q(node).property('showOnSM') == false && !node.context.inBackend ? 'hidden-sm' : false}
+	hideOnMD = ${q(node).property('showOnMD') == false && !node.context.inBackend ? 'hidden-md' : false}
+	hideOnLG = ${q(node).property('showOnLG') == false && !node.context.inBackend ? 'hidden-lg' : false}
+	hideOnXL = ${q(node).property('showOnXL') == false && !node.context.inBackend ? 'hidden-xl' : false}
+	hideOnPrint = ${q(node).property('showOnPrint') == false && !node.context.inBackend ? 'hidden-print' : false}
 }
+
+prototype(Visibility:MenuArray) < prototype(Visibility:ContentArray) {
+	@override.node = ${item.node}
+	hideOnPrint = false
+}
+
+prototype(Neos:Content) {
+	attributes.class = Visibility:ContentArray
+}
+
+/* Include Menu Classes like this:
+
+prototype(Neos:Menu) {
+	active.attributes.class = Dotpulse.Visibility:MenuArray {
+		active = 'active'
+	}
+
+	current.attributes.class = Dotpulse.Visibility:MenuArray {
+		current = 'active'
+	}
+
+	normal.attributes.class = Dotpulse.Visibility:MenuArray
+}
+
+*/

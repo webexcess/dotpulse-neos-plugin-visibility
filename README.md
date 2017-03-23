@@ -6,21 +6,18 @@
 
 # Dotpulse.Visibility Package for Neos CMS #
 
-Composer Integration:
+## Composer
+
+### Integration Repository
 ```
-#!json
-{
-    "require": {
-        "dotpulse/visibility": "~2.1.0"
-    },
-    "repositories":[
-        {
-            "type": "vcs",
-            "url": "ssh://hg@bitbucket.org/dotpulse/neos-plugin-visibility"
-        }
-    ]
-}
-```* * *
+composer config repositories.visibility vcs ssh://hg@bitbucket.org/dotpulse/neos-plugin-visibility
+```
+
+### Installation
+```
+composer require dotpulse/visibility
+```
+* * *
 > ##### License Terms
 > DE: Dieses Package wird durch webexcess unter der [GNU GPLv3 Lizenz](https://choosealicense.com/licenses/gpl-3.0/) verwaltet. Dieses Package und darin enthaltene oder hinzugefügte Quellcodes können exklusiv durch webexcess in Teilen oder als Ganzes zusätzlich und unter eigenem Namen unter der MIT-Lizenz veröffentlicht werden.
 
