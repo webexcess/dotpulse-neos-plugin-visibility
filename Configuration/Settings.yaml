@@ -2,7 +2,7 @@ TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'Dotpulse.Visibility': true
+        'Dotpulse.Visibility': TRUE
     userInterface:
       translation:
         autoInclude:
@@ -10,4 +10,4 @@ TYPO3:
 
 Dotpulse:
   Visibility:
-    includeCSS: false
+    includeCSS: FALSE

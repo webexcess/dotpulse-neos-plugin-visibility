@@ -1,5 +1,5 @@
 'Dotpulse.Visibility:Mixin':
-  abstract: true
+  abstract: TRUE
   ui:
     inspector:
       groups:
@@ -12,55 +12,55 @@
   properties:
     showOnXS:
       type: boolean
-      defaultValue: true
+      defaultValue: TRUE
       ui:
         label: i18n
-        reloadPageIfChanged: false
+        reloadPageIfChanged: FALSE
         inspector:
           position: 10
           group: responsive
     showOnSM:
       type: boolean
-      defaultValue: true
+      defaultValue: TRUE
       ui:
         label: i18n
-        reloadPageIfChanged: false
+        reloadPageIfChanged: FALSE
         inspector:
           position: 20
           group: responsive
     showOnMD:
       type: boolean
-      defaultValue: true
+      defaultValue: TRUE
       ui:
         label: i18n
-        reloadPageIfChanged: false
+        reloadPageIfChanged: FALSE
         inspector:
           position: 30
           group: responsive
     showOnLG:
       type: boolean
-      defaultValue: true
+      defaultValue: TRUE
       ui:
         label: i18n
-        reloadPageIfChanged: false
+        reloadPageIfChanged: FALSE
         inspector:
           position: 40
           group: responsive
     showOnXL:
       type: boolean
-      defaultValue: true
+      defaultValue: TRUE
       ui:
         label: i18n
-        reloadPageIfChanged: false
+        reloadPageIfChanged: FALSE
         inspector:
           position: 50
           group: responsive
     showOnPrint:
       type: boolean
-      defaultValue: true
+      defaultValue: TRUE
       ui:
         label: i18n
-        reloadPageIfChanged: false
+        reloadPageIfChanged: FALSE
         inspector:
           position: 60
           group: responsive
@@ -68,9 +68,9 @@
 
 'TYPO3.Neos:Content':
   superTypes:
-    'Dotpulse.Visibility:Mixin': true
+    'Dotpulse.Visibility:Mixin': TRUE
 
 
 'TYPO3.Neos.NodeTypes:ContentReferences':
   superTypes:
-    'Dotpulse.Visibility:Mixin': false
+    'Dotpulse.Visibility:Mixin': FALSE

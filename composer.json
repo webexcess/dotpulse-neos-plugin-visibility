@@ -2,7 +2,9 @@
     "name": "dotpulse/visibility",
     "type": "typo3-flow-plugin",
     "description": "Use this plugin for showing and hiding content by device via media query. Also included are settings for toggling content when printed.",
-    "version": "2.1.1",
+    "version": "2.1.2",
+    "keywords": ["responsive","css","media query"],
+    "time": "2016-01-19",
     "require": {
         "typo3/neos": "2.*"
     },
@@ -10,9 +12,6 @@
         "psr-0": {
             "Dotpulse\\Visibility": "Classes"
         }
-    },
-    "support": {
-        "email": "webmaster@webexcess.ch"
     },
     "authors": [
         {
