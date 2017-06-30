@@ -4,11 +4,11 @@ Dotpulse:
     includeCSS: false
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        Dotpulse.Visibility: true
     userInterface:
       translation:
         autoInclude:
           Dotpulse.Visibility:
             - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        Dotpulse.Visibility: true
