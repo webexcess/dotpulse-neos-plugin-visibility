@@ -1,4 +1,4 @@
-namespace: TypoScript=TYPO3.TypoScript
+namespace: TypoScript=Neos.Fusion
 namespace: Neos=TYPO3.Neos
 namespace: Visibility=Dotpulse.Visibility
 
@@ -10,7 +10,7 @@ prototype(Neos:Page) {
 			tagName = 'link'
 			attributes {
 				rel = 'stylesheet'
-				href = TYPO3.TypoScript:ResourceUri {
+				href = Neos.Fusion:ResourceUri {
 					path = 'resource://Dotpulse.Visibility/Public/Visibility.css'
 				}
 			}
