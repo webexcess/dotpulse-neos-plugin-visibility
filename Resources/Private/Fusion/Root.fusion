@@ -1,16 +1,16 @@
-namespace: TypoScript=TYPO3.TypoScript
-namespace: Neos=TYPO3.Neos
+namespace: Fusion=Neos.Fusion
+namespace: Neos=Neos.Neos
 namespace: Visibility=Dotpulse.Visibility
 
 prototype(Neos:Page) {
 	head {
-		stylesheets.visibility  = TypoScript:Tag {
+		stylesheets.visibility  = Fusion:Tag {
 			@if.liveAnfIncludeCSS = ${!node.context.inBackend && Configuration.setting('Dotpulse.Visibility.includeCSS')}
 			@position = 'end'
 			tagName = 'link'
 			attributes {
 				rel = 'stylesheet'
-				href = TYPO3.TypoScript:ResourceUri {
+				href = Fusion:ResourceUri {
 					path = 'resource://Dotpulse.Visibility/Public/Visibility.css'
 				}
 			}
@@ -18,7 +18,7 @@ prototype(Neos:Page) {
 	}
 }
 
-prototype(Visibility:ContentRawArray) < prototype(TypoScript:RawArray) {
+prototype(Visibility:ContentRawArray) < prototype(Fusion:RawArray) {
 	hideOnXS = ${q(node).property('showOnXS') == false && !node.context.inBackend ? 'hidden-xs' : false}
 	hideOnSM = ${q(node).property('showOnSM') == false && !node.context.inBackend ? 'hidden-sm' : false}
 	hideOnMD = ${q(node).property('showOnMD') == false && !node.context.inBackend ? 'hidden-md' : false}
@@ -35,7 +35,7 @@ prototype(Visibility:MenuRawArray) < prototype(Visibility:ContentRawArray) {
 prototype(Neos:Content) {
 	@context.visibility = Visibility:ContentRawArray
 
-	attributes.class = TypoScript:RawArray {
+	attributes.class = Fusion:RawArray {
 		visibility = ${Array.join(visibility, ' ')}
 	}
 }

@@ -69,11 +69,11 @@
           group: showOn
 
 
-'TYPO3.Neos:Content':
+'Neos.Neos:Content':
   superTypes:
     'Dotpulse.Visibility:Mixin': TRUE
 
 
-'TYPO3.Neos.NodeTypes:ContentReferences':
+'Neos.NodeTypes:ContentReferences':
   superTypes:
     'Dotpulse.Visibility:Mixin': FALSE
