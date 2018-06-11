@@ -3,7 +3,7 @@
     "type": "neos-plugin",
     "description": "Use this plugin for showing and hiding content by device via media query. Also included are settings for toggling content when printed.",
     "require": {
-        "neos/neos": "~3.* || ~4.0"
+        "neos/neos": "^3.0 || ~4.0"
     },
     "authors": [
         {
