@@ -1,16 +1,12 @@
-namespace: Fusion=Neos.Fusion
-namespace: Neos=Neos.Neos
-namespace: Visibility=Dotpulse.Visibility
-
-prototype(Neos:Page) {
+prototype(Neos.Neos:Page) {
 	head {
-		stylesheets.visibility  = Fusion:Tag {
+		stylesheets.visibility  = Neos.Fusion:Tag {
 			@if.liveAnfIncludeCSS = ${!node.context.inBackend && Configuration.setting('Dotpulse.Visibility.includeCSS')}
 			@position = 'end'
 			tagName = 'link'
 			attributes {
 				rel = 'stylesheet'
-				href = Fusion:ResourceUri {
+				href = Neos.Fusion:ResourceUri {
 					path = 'resource://Dotpulse.Visibility/Public/Visibility.css'
 				}
 			}
@@ -18,7 +14,7 @@ prototype(Neos:Page) {
 	}
 }
 
-prototype(Visibility:ContentRawArray) < prototype(Fusion:RawArray) {
+prototype(Dotpulse.Visibility:ContentRawArray) < prototype(Neos.Fusion:RawArray) {
 	hideOnXS = ${q(node).property('showOnXS') == false && !node.context.inBackend ? 'hidden-xs' : false}
 	hideOnSM = ${q(node).property('showOnSM') == false && !node.context.inBackend ? 'hidden-sm' : false}
 	hideOnMD = ${q(node).property('showOnMD') == false && !node.context.inBackend ? 'hidden-md' : false}
@@ -27,22 +23,22 @@ prototype(Visibility:ContentRawArray) < prototype(Fusion:RawArray) {
 	hideOnPrint = ${q(node).property('showOnPrint') == false && !node.context.inBackend ? 'hidden-print' : false}
 }
 
-prototype(Visibility:MenuRawArray) < prototype(Visibility:ContentRawArray) {
+prototype(Dotpulse.Visibility:MenuRawArray) < prototype(Dotpulse.Visibility:ContentRawArray) {
 	@context.node = ${item.node}
 	hideOnPrint = false
 }
 
-prototype(Neos:Content) {
-	@context.visibility = Visibility:ContentRawArray
+prototype(Neos.Neos:Content) {
+	@context.visibility = Dotpulse.Visibility:ContentRawArray
 
-	attributes.class = Fusion:RawArray {
+	attributes.class = Neos.Fusion:RawArray {
 		visibility = ${Array.join(visibility, ' ')}
 	}
 }
 
 /* Include Menu Classes like this:
 
-prototype(Neos:Menu) {
+prototype(Neos.Neos:Menu) {
 	active.attributes.class = Dotpulse.Visibility:MenuRawArray {
 		active = 'active'
 	}

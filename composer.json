@@ -3,12 +3,7 @@
     "type": "neos-plugin",
     "description": "Use this plugin for showing and hiding content by device via media query. Also included are settings for toggling content when printed.",
     "require": {
-        "neos/neos": "3.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Dotpulse\\Visibility\\": "Classes/"
-        }
+        "neos/neos": "~3.* || ~4.0"
     },
     "authors": [
         {
@@ -17,5 +12,11 @@
             "homepage": "https://github.com/jonnitto",
             "role": "Developer"
         }
-    ]
+    ],
+    "extra": {
+        "installer-name": "Dotpulse.Visibility",
+        "neos": {
+            "package-key": "Dotpulse.Visibility"
+        }
+    }
 }
